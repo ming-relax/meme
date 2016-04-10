@@ -40,17 +40,18 @@
                                 <items>
                                     <navigationItem id="Wsh-bR-aG0">
                                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="action" id="7Xl-py-gHg"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="FZB-z8-4xb"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="FZB-z8-4xb">
+                                            <connections>
+                                                <action selector="cancelMeme:" destination="BYZ-38-t0r" id="Ggj-iN-FOK"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8VB-LG-F8f">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNd-po-Mmm">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="64" width="400" height="30"/>
                                 </variation>
@@ -58,11 +59,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dq5-Qo-PrI">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="526" width="400" height="30"/>
                                 </variation>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8VB-LG-F8f">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,9 +91,9 @@
                             <mask key="subviews">
                                 <exclude reference="Vky-Zt-iUo"/>
                                 <exclude reference="B8k-6o-Ssy"/>
-                                <exclude reference="8VB-LG-F8f"/>
                                 <exclude reference="CNd-po-Mmm"/>
                                 <exclude reference="dq5-Qo-PrI"/>
+                                <exclude reference="8VB-LG-F8f"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Neo-c2-mcC"/>
@@ -114,9 +118,9 @@
                             <mask key="subviews">
                                 <include reference="Vky-Zt-iUo"/>
                                 <include reference="B8k-6o-Ssy"/>
-                                <include reference="8VB-LG-F8f"/>
                                 <include reference="CNd-po-Mmm"/>
                                 <include reference="dq5-Qo-PrI"/>
+                                <include reference="8VB-LG-F8f"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Neo-c2-mcC"/>
@@ -139,8 +143,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="dq5-Qo-PrI" id="3H7-pb-IFd"/>
                         <outlet property="memeCamera" destination="k24-Za-cbU" id="heV-06-97D"/>
                         <outlet property="memeImage" destination="8VB-LG-F8f" id="VAY-DS-jFv"/>
+                        <outlet property="topTextField" destination="CNd-po-Mmm" id="i7n-ep-tPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
