@@ -40,28 +40,27 @@
                                 <items>
                                     <navigationItem id="Wsh-bR-aG0">
                                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="action" id="7Xl-py-gHg"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="FZB-z8-4xb"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="FZB-z8-4xb">
+                                            <connections>
+                                                <action selector="cancelMeme:" destination="BYZ-38-t0r" id="Ggj-iN-FOK"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8VB-LG-F8f">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNd-po-Mmm">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="30"/>
-                                </variation>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dq5-Qo-PrI">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="526" width="400" height="30"/>
-                                </variation>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -69,11 +68,11 @@
                             <constraint firstAttribute="trailing" secondItem="Vky-Zt-iUo" secondAttribute="trailing" id="8ER-OE-cH8"/>
                             <constraint firstAttribute="trailing" secondItem="dq5-Qo-PrI" secondAttribute="trailing" id="BFq-el-M3Q"/>
                             <constraint firstAttribute="trailing" secondItem="CNd-po-Mmm" secondAttribute="trailing" id="D1B-Ur-zO5"/>
-                            <constraint firstItem="CNd-po-Mmm" firstAttribute="top" secondItem="B8k-6o-Ssy" secondAttribute="bottom" symbolic="YES" id="D5C-ha-5Rg"/>
+                            <constraint firstItem="CNd-po-Mmm" firstAttribute="top" secondItem="B8k-6o-Ssy" secondAttribute="bottom" constant="20" id="D5C-ha-5Rg"/>
                             <constraint firstItem="Vky-Zt-iUo" firstAttribute="leading" secondItem="B8k-6o-Ssy" secondAttribute="leading" id="EGc-Kr-oRK"/>
                             <constraint firstItem="Vky-Zt-iUo" firstAttribute="top" secondItem="8VB-LG-F8f" secondAttribute="bottom" id="N3m-1v-6wf"/>
                             <constraint firstItem="B8k-6o-Ssy" firstAttribute="width" secondItem="Vky-Zt-iUo" secondAttribute="width" id="Neo-c2-mcC"/>
-                            <constraint firstItem="Vky-Zt-iUo" firstAttribute="top" secondItem="dq5-Qo-PrI" secondAttribute="bottom" symbolic="YES" id="ckg-EQ-2I2"/>
+                            <constraint firstItem="Vky-Zt-iUo" firstAttribute="top" secondItem="dq5-Qo-PrI" secondAttribute="bottom" constant="20" id="ckg-EQ-2I2"/>
                             <constraint firstItem="Vky-Zt-iUo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eP4-7t-OuN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vky-Zt-iUo" secondAttribute="bottom" id="geA-8y-WcU"/>
                             <constraint firstItem="8VB-LG-F8f" firstAttribute="top" secondItem="B8k-6o-Ssy" secondAttribute="bottom" id="gln-JQ-OKR"/>
@@ -92,22 +91,22 @@
                                 <exclude reference="dq5-Qo-PrI"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Neo-c2-mcC"/>
-                                <exclude reference="gvw-2k-zRp"/>
-                                <exclude reference="gln-JQ-OKR"/>
-                                <exclude reference="hf7-LS-sbV"/>
-                                <exclude reference="kkU-lV-fND"/>
+                                <exclude reference="geA-8y-WcU"/>
                                 <exclude reference="D1B-Ur-zO5"/>
                                 <exclude reference="D5C-ha-5Rg"/>
                                 <exclude reference="xdp-TO-GSF"/>
                                 <exclude reference="BFq-el-M3Q"/>
                                 <exclude reference="irp-Kn-Fnt"/>
+                                <exclude reference="Neo-c2-mcC"/>
+                                <exclude reference="gvw-2k-zRp"/>
                                 <exclude reference="8ER-OE-cH8"/>
                                 <exclude reference="EGc-Kr-oRK"/>
                                 <exclude reference="N3m-1v-6wf"/>
                                 <exclude reference="ckg-EQ-2I2"/>
                                 <exclude reference="eP4-7t-OuN"/>
-                                <exclude reference="geA-8y-WcU"/>
+                                <exclude reference="gln-JQ-OKR"/>
+                                <exclude reference="hf7-LS-sbV"/>
+                                <exclude reference="kkU-lV-fND"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -119,28 +118,30 @@
                                 <include reference="dq5-Qo-PrI"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Neo-c2-mcC"/>
-                                <include reference="gvw-2k-zRp"/>
-                                <include reference="gln-JQ-OKR"/>
-                                <include reference="hf7-LS-sbV"/>
-                                <include reference="kkU-lV-fND"/>
+                                <include reference="geA-8y-WcU"/>
                                 <include reference="D1B-Ur-zO5"/>
                                 <include reference="D5C-ha-5Rg"/>
                                 <include reference="xdp-TO-GSF"/>
                                 <include reference="BFq-el-M3Q"/>
                                 <include reference="irp-Kn-Fnt"/>
+                                <include reference="Neo-c2-mcC"/>
+                                <include reference="gvw-2k-zRp"/>
                                 <include reference="8ER-OE-cH8"/>
                                 <include reference="EGc-Kr-oRK"/>
                                 <include reference="N3m-1v-6wf"/>
                                 <include reference="ckg-EQ-2I2"/>
                                 <include reference="eP4-7t-OuN"/>
-                                <include reference="geA-8y-WcU"/>
+                                <include reference="gln-JQ-OKR"/>
+                                <include reference="hf7-LS-sbV"/>
+                                <include reference="kkU-lV-fND"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="dq5-Qo-PrI" id="3H7-pb-IFd"/>
                         <outlet property="memeCamera" destination="k24-Za-cbU" id="heV-06-97D"/>
                         <outlet property="memeImage" destination="8VB-LG-F8f" id="VAY-DS-jFv"/>
+                        <outlet property="topTextField" destination="CNd-po-Mmm" id="i7n-ep-tPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
