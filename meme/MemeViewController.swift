@@ -19,6 +19,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         memeCamera.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        print("viewWillAppear")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +37,19 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         topTextField.borderStyle = UITextBorderStyle.None
         topTextField.textAlignment = NSTextAlignment.Center
         topTextField.delegate = self
-        topTextField.text = "TOP"
 
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.backgroundColor = UIColor.clearColor()
+        bottomTextField.borderStyle = UITextBorderStyle.None
         bottomTextField.textAlignment = NSTextAlignment.Center
         bottomTextField.delegate = self
+        
+        disableMemeEditor()
     }
 
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
         memeImage.image = nil
+        disableMemeEditor()
     }
     
     
@@ -62,10 +67,24 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
     
+    func disableMemeEditor() {
+        topTextField.enabled = false
+        topTextField.text = "TOP"
+        
+        bottomTextField.enabled = false
+        bottomTextField.text = "BOTTOM"
+    }
+    
+    func enableMemeEditor() {
+        topTextField.enabled = true
+        bottomTextField.enabled = true
+    }
+    
     // UIImagePickerController delegate methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         memeImage.image = info["UIImagePickerControllerOriginalImage"] as? UIImage
         memeImage.contentMode = UIViewContentMode.ScaleAspectFit
+        enableMemeEditor()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -75,17 +94,17 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //UITextField delegate methods
     func textFieldDidBeginEditing(textField: UITextField) {
-//        textField.text = ""
+        textField.text = ""
     }
     
-//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-//        return true
-//    }
-//    
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
 
