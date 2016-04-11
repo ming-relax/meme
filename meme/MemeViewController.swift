@@ -15,6 +15,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
+    
+    // Set these state to true when the user first edited the image
+    var topTextFieldEdited = false
+    var bottomTextFieldEdited = false
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,6 +84,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.enabled = true
     }
     
+    func clearTextFieldIfFirstEdit(edited: Bool, textField: UITextField) {
+        if !edited {
+            textField.text = ""
+        }
+    }
+    
     // UIImagePickerController delegate methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         memeImage.image = info["UIImagePickerControllerOriginalImage"] as? UIImage
@@ -94,7 +104,15 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //UITextField delegate methods
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.text = ""
+
+        if textField == topTextField {
+            clearTextFieldIfFirstEdit(topTextFieldEdited, textField: textField)
+            topTextFieldEdited = true
+        } else if textField == bottomTextField {
+            clearTextFieldIfFirstEdit(bottomTextFieldEdited, textField: textField)
+            bottomTextFieldEdited = true
+        }
+        
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
