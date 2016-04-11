@@ -32,10 +32,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
         ]
         topTextField.defaultTextAttributes = memeTextAttributes
-//        topTextField.backgroundColor = UIColor.clearColor()
+        topTextField.backgroundColor = UIColor.clearColor()
         topTextField.borderStyle = UITextBorderStyle.None
         topTextField.textAlignment = NSTextAlignment.Center
         topTextField.delegate = self
+        topTextField.text = "TOP"
 
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = NSTextAlignment.Center
@@ -77,14 +78,14 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //        textField.text = ""
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        return true
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+//        return true
+//    }
+//    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
 
 }
 
