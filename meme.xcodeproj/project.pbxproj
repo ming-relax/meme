@@ -14,7 +14,7 @@
 		3AA571C61CAAAEA10033ECF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA571C41CAAAEA10033ECF5 /* LaunchScreen.storyboard */; };
 		3AA571D11CAAAEA10033ECF5 /* memeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA571D01CAAAEA10033ECF5 /* memeTests.swift */; };
 		3AA571DC1CAAAEA10033ECF5 /* memeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA571DB1CAAAEA10033ECF5 /* memeUITests.swift */; };
-		3AEACBC71CBFA50E000B40A8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEACBC61CBFA50E000B40A8 /* File.swift */; };
+		3AEACBC71CBFA50E000B40A8 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEACBC61CBFA50E000B40A8 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		3AA571D71CAAAEA10033ECF5 /* memeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA571DB1CAAAEA10033ECF5 /* memeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memeUITests.swift; sourceTree = "<group>"; };
 		3AA571DD1CAAAEA10033ECF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AEACBC61CBFA50E000B40A8 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		3AEACBC61CBFA50E000B40A8 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 				3AA571C21CAAAEA10033ECF5 /* Assets.xcassets */,
 				3AA571C41CAAAEA10033ECF5 /* LaunchScreen.storyboard */,
 				3AA571C71CAAAEA10033ECF5 /* Info.plist */,
-				3AEACBC61CBFA50E000B40A8 /* File.swift */,
+				3AEACBC61CBFA50E000B40A8 /* Meme.swift */,
 			);
 			path = meme;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA571BE1CAAAEA10033ECF5 /* MemeViewController.swift in Sources */,
-				3AEACBC71CBFA50E000B40A8 /* File.swift in Sources */,
+				3AEACBC71CBFA50E000B40A8 /* Meme.swift in Sources */,
 				3AA571BC1CAAAEA10033ECF5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

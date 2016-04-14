@@ -21,6 +21,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
+    var currentTextField: UITextField?
+    
     // Set these state to true when the user first edited the image
     var topTextFieldEdited = false
     var bottomTextFieldEdited = false
@@ -142,9 +144,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if textField == topTextField {
             clearTextFieldIfFirstEdit(topTextFieldEdited, textField: textField)
             topTextFieldEdited = true
+            currentTextField = topTextField
         } else if textField == bottomTextField {
             clearTextFieldIfFirstEdit(bottomTextFieldEdited, textField: textField)
             bottomTextFieldEdited = true
+            currentTextField = bottomTextField
         }
         
     }
@@ -177,11 +181,15 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if currentTextField == bottomTextField {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y += getKeyboardHeight(notification)
+        if currentTextField == bottomTextField {
+            view.frame.origin.y += getKeyboardHeight(notification)            
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
