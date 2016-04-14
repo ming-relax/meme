@@ -56,17 +56,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             NSStrokeWidthAttributeName: -3
             
         ]
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.backgroundColor = UIColor.clearColor()
-        topTextField.borderStyle = UITextBorderStyle.None
-        topTextField.textAlignment = NSTextAlignment.Center
-        topTextField.delegate = self
-
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.backgroundColor = UIColor.clearColor()
-        bottomTextField.borderStyle = UITextBorderStyle.None
-        bottomTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.delegate = self
+        initTextField(topTextField, memeTextAttributes: memeTextAttributes)
+        initTextField(bottomTextField, memeTextAttributes: memeTextAttributes)
         
         disableMemeEditor()
     }
@@ -97,6 +88,15 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         imagePicker.delegate = self
         
+    }
+    
+    func initTextField(textField: UITextField, memeTextAttributes: [String: AnyObject]) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.backgroundColor = UIColor.clearColor()
+        textField.borderStyle = UITextBorderStyle.None
+        textField.textAlignment = NSTextAlignment.Center
+        textField.delegate = self
+
     }
     
     func disableMemeEditor() {
