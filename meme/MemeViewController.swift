@@ -77,17 +77,18 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     @IBAction func selectAlbum(sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        presentViewController(imagePicker, animated: false, completion: nil)
-        imagePicker.delegate = self
+        presentImagePicker(UIImagePickerControllerSourceType.PhotoLibrary)
     }
 
     @IBAction func selectCamera(sender: UIBarButtonItem) {
+        presentImagePicker(UIImagePickerControllerSourceType.Camera)
+    }
+    
+    func presentImagePicker(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         presentViewController(imagePicker, animated: false, completion: nil)
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.sourceType = sourceType
         imagePicker.delegate = self
-        
     }
     
     func initTextField(textField: UITextField, memeTextAttributes: [String: AnyObject]) {
