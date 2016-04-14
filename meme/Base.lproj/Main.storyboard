@@ -39,7 +39,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="Wsh-bR-aG0">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="action" id="7Xl-py-gHg"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="action" id="7Xl-py-gHg">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="Enk-m9-9SM"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="FZB-z8-4xb">
                                             <connections>
                                                 <action selector="cancelMeme:" destination="BYZ-38-t0r" id="Ggj-iN-FOK"/>
@@ -139,8 +143,11 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="dq5-Qo-PrI" id="3H7-pb-IFd"/>
+                        <outlet property="bottomToolbar" destination="Vky-Zt-iUo" id="QX8-5c-gQg"/>
                         <outlet property="memeCamera" destination="k24-Za-cbU" id="heV-06-97D"/>
                         <outlet property="memeImage" destination="8VB-LG-F8f" id="VAY-DS-jFv"/>
+                        <outlet property="shareMemeButton" destination="7Xl-py-gHg" id="l24-SF-4XK"/>
+                        <outlet property="topNavigationBar" destination="B8k-6o-Ssy" id="mpO-eF-fXy"/>
                         <outlet property="topTextField" destination="CNd-po-Mmm" id="i7n-ep-tPl"/>
                     </connections>
                 </viewController>
