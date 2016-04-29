@@ -73,6 +73,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
         memeImage.image = nil
         disableMemeEditor()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -207,9 +208,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func shareMemeFinished(activityType: String?, completed: Bool, returnedItems: [AnyObject]?, activityError: NSError?) -> Void {
 
         if completed {
-            self.meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: self.memeImage.image!, memedImage: memedImage!)
-//            self.memeImage.image = memedImage
+            save()
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
+    }
+    
+    func save() {
+        let meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: self.memeImage.image!, memedImage: memedImage!)
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        print("save meme")
     }
     
     func generateMemedImage() -> UIImage {
