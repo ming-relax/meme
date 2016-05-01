@@ -10,7 +10,4 @@ import Foundation
 import UIKit
 
 class MemeCollectionViewCell: UICollectionViewCell {
-    func setText(top: String, bottomString: String) {
-        
-    }
 }

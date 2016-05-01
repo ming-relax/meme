@@ -35,7 +35,7 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let vc: DetailedMemeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailedMeme") as! DetailedMemeViewController
 
         let meme: UIImage = memes[indexPath.row].memedImage
-        vc.memeImage = UIImageView(image: meme)
+        vc.meme = meme
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
