@@ -39,7 +39,6 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDelegate, 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("memeCollectionCell", forIndexPath: indexPath) as! MemeCollectionViewCell
         let meme = memes[indexPath.item]
-        cell.setText(meme.topText!, bottomString: meme.bottomText!)
         let imageView = UIImageView(image: meme.memedImage)
         cell.backgroundView = imageView
         
@@ -50,7 +49,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDelegate, 
         let vc: DetailedMemeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailedMeme") as! DetailedMemeViewController
         
         let meme: UIImage = memes[indexPath.row].memedImage
-        vc.memeImage = UIImageView(image: meme)
+        vc.meme = meme
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
